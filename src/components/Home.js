@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const Home = (props) => {
-  const [apiResponse, setApiResponse] = useState({})
 
-  const navigate  = useNavigate();
+  const [apiResponse, setApiResponse] = useState({})
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,9 +22,7 @@ const Home = (props) => {
             apiResponse.results.map((pokemon, index) => {
               return(
                 <li key={index} onClick={() => {
-                  props.setPoke(pokemon.url)
-                  props.fetch()
-                  navigate('/pokemon')
+                  props.fetch(pokemon.url)
                 }}>{pokemon.name}</li>
               )
             })
