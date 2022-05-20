@@ -38,13 +38,11 @@ const Pokemon = ({ current }) => {
   })
 
 
-
-
   console.log(current)
   return (
     <div className='poke'>
-
       <p className="name">{current.name}</p>
+
       <p className='number'># {current.id}</p>
       <p>
         {
