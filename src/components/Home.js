@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import './Home.css'
 
 const Home = (props) => {
 
@@ -8,20 +9,21 @@ const Home = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=0`)
+      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=500&offset=0`)
       setApiResponse(response.data)
     }
     fetchData()
   }, [])
   
   return (
-    <div>
-      <ul>
+    <div className='pokeIndex'>
+  
+      <ul className='wrap'>
         {
           Object.keys(apiResponse).length > 0 ?
             apiResponse.results.map((pokemon, index) => {
               return(
-                <li key={index} onClick={() => {
+                <li key={index} className="pokeList" onClick={() => {
                   props.fetch(pokemon.url)
                 }}>{pokemon.name}</li>
               )
@@ -29,6 +31,7 @@ const Home = (props) => {
           : null
         }
       </ul>
+  
     </div>
   )
 }

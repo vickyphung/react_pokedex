@@ -1,0 +1,30 @@
+.pokeList {
+    text-transform: capitalize;
+    list-style-type: none;
+    display: inline-block;
+    border: 3px solid rgb(12, 194, 179);
+    background-color: rgba(53, 223, 209, 0.795);
+    color: rgb(83, 79, 83);
+    margin: 6px;
+    padding: 8px; 
+    border-radius: 5em;
+}
+
+.pokeIndex {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.45vw;
+    font-weight: bold;
+}
+
+.wrap {
+    line-height: 2em;
+    margin-left: -2em;
+    word-wrap: normal;
+    letter-spacing: .02em;
+    text-align: center;
+}
+
+.pokeList:hover {
+    background-color: rgb(67, 181, 235);
+    color: white;
+}

@@ -37,12 +37,16 @@ const Pokemon = ({ current }) => {
     backgroundColor1: colorCheck(1)
   })
 
+
+
+
   console.log(current)
   return (
-    <div>
-      {current.name}
+    <div className='poke'>
+
+      <p className="name">{current.name}</p>
+      <p className='number'># {current.id}</p>
       <p>
-        its types are:
         {
           current.types.map((currentType, index) => {
             return (
@@ -53,7 +57,42 @@ const Pokemon = ({ current }) => {
           })
         }
       </p>
-    </div>
+      <p> <span className='title'>Height</span>: {current.height}</p>
+      <p> <span className='title'>Weight</span>: {current.weight}</p> 
+      <p>
+        {
+          current.stats.map((stats, index) => {
+            return (
+              <span className="stats">
+                <p>
+                  <span className='title'>{stats.stat.name}</span>: {stats.base_stat}
+                </p>
+              </span>
+            )
+          })
+        }      
+      </p>
+
+      <div>
+        <p>
+          <span className='title'>Abilities</span>: 
+        {
+          current.abilities.map((abilities, index) => {
+            return (
+              <span className="abilities">
+         
+                {abilities.ability.name}
+         
+              </span> 
+            )
+          })
+        }
+        </p>
+      </div>
+
+
+
+</div>
   )
 }
 
